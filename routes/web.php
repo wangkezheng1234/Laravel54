@@ -10,14 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*  Route::get('/', function () {
+/*   Route::get('/', function () {
     return view('welcome');
-}); */ 
+});  */
 //第二个参数是callback
+Route::get('/', '\App\Http\Controllers\PostController@index');
 Route::get('/posts', '\App\Http\Controllers\PostController@index');
 Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
 Route::get('/posts/{post}', '\App\Http\Controllers\PostController@show');
-Route::get('/posts/{post}/edit', '\App\Http\Controllers\PostController@edit');
+Route::get('/posts/{post}/edit', '\App\Http\Controllers\PostController@edit'); 
  /*
 Route::post('/posts', '\App\Http\Controllers\PostController@store');
 Route::get('/posts/search', '\App\Http\Controllers\PostController@search');
