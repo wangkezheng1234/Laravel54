@@ -14,9 +14,8 @@ class PostController extends Controller
         return view("post/create");
     }
 
-    function show(){
-        $data = array('a'=>'this is a','show'=>'false');
-        return view("post/show",$data);
+    function show(Post $post){
+        return view("post/show",compact('post'));
     }
     function store(){
         
