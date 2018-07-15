@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Post;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     function index(){
-        $posts = Post::orderby('id')->get();
+        $posts = Post::orderby('id')->paginate(5);
         return view("post/index",compact('posts'));
     }
     function create(){
