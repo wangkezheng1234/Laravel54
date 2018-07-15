@@ -16,9 +16,11 @@
 //第二个参数是callback
 Route::get('/', '\App\Http\Controllers\PostController@index');
 Route::get('/posts', '\App\Http\Controllers\PostController@index');
+Route::get('/posts/test'  , '\App\Http\Controllers\PostController@test');
 Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
 Route::get('/posts/{post}', '\App\Http\Controllers\PostController@show');
 Route::get('/posts/{post}/edit', '\App\Http\Controllers\PostController@edit'); 
+Route::get('/posts/test'  , '\App\Http\Controllers\PostController@test');
  /*
 Route::post('/posts', '\App\Http\Controllers\PostController@store');
 Route::get('/posts/search', '\App\Http\Controllers\PostController@search');

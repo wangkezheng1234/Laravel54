@@ -37,10 +37,10 @@
         <div>
             @foreach($posts as $post)
                 <div class="blog-post">
-                    <h2 class="blog-post-title"><a href="/posts/62" >{{$post['title']}}</a></h2>
-                    <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">{{$post['author']}}</a></p>
+                    <h2 class="blog-post-title"><a href="/posts/62" >{{$post->title}}</a></h2>
+                    <p class="blog-post-meta">{{$post->created_at->toDateTimeString()}}<a href="/user/5">{{$post->author}}</a></p>
     
-                    <p>{{$post['content']}}</p>
+                    <p>{{str_limit($post->content,5,'...')}}</p>
                     <p class="blog-post-meta">赞 0  | 评论 0</p>
              </div>        
             @endforeach
