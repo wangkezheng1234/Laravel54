@@ -34,7 +34,8 @@ class PostController extends Controller
     function update(){
         echo 400;
     }
-    function delete(){
-        
+    function delete(Post $post){
+        $post->delete();
+        return redirect('/posts');
     } 
 }

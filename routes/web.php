@@ -23,6 +23,7 @@ Route::get('/posts/{post}/edit', '\App\Http\Controllers\PostController@edit');
 Route::get('/posts/test'  , '\App\Http\Controllers\PostController@test');
 Route::post('/posts', '\App\Http\Controllers\PostController@store');
 Route::put('/posts/{post}', '\App\Http\Controllers\PostController@update');
+Route::get('/posts/{post}/delete', '\App\Http\Controllers\PostController@delete');
  /*
 Route::post('/posts', '\App\Http\Controllers\PostController@store');
 Route::get('/posts/search', '\App\Http\Controllers\PostController@search');
