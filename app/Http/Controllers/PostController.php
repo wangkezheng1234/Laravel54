@@ -18,6 +18,10 @@ class PostController extends Controller
         return view("post/show",compact('post'));
     }
     function store(){
+        $this->validate(request(),[
+            'title'=>'required|string|min:10',
+            'content'=>'required|string|min:10',
+        ],['title.min'=>'文章标题过短！']);
         $post = new Post();
         $post->title = request('title');
         $post->content = request('content');
@@ -28,7 +32,7 @@ class PostController extends Controller
         return view("post/edit",compact('post'));
     }
     function update(){
-        
+        echo 400;
     }
     function delete(){
         

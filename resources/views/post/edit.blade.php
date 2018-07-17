@@ -5,7 +5,7 @@
     <div class="col-sm-8 blog-main">
         <form action="/posts/{{$post->id}}" method="POST">
             <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="_token" value="MESUY3topeHgvFqsy9EcM916UWQq6khiGHM91wHy">
+           {{csrf_field()}}
             <div class="form-group">
                 <label>标题</label>
                 <input name="title" type="text" class="form-control" placeholder="这里是标题" value="{{$post->title}}">
