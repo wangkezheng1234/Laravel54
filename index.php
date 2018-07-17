@@ -1,4 +1,5 @@
 <?php
+echo 100£»
 $a = new Redis();
 $a->connect('10.0.0.11');
 echo $a->get('name');
