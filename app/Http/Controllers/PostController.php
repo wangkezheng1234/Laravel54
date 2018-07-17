@@ -31,8 +31,15 @@ class PostController extends Controller
     function edit(Post $post){
         return view("post/edit",compact('post'));
     }
-    function update(){
-        echo 400;
+    function update(Post $post){
+        $this->validate(request(),[
+            'title'=>'required|string|min:10',
+            'content'=>'required|string|min:10',
+        ],['title.min'=>'文章标题过短！']);
+        $post->title = request('title');
+        $post->content = request('content');
+        $post->save();
+        return redirect("/posts/{$post->id}");
     }
     function delete(Post $post){
         $post->delete();
