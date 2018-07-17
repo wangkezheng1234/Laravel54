@@ -14,13 +14,7 @@
                 <label>内容</label>
                 <textarea id="content" name="content" class="form-control" style="height:400px;max-height:500px;"  placeholder="这里是内容">{{$post->content}}</textarea>
             </div>
-            @if(count($errors)>0)
-                @foreach($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        <li>{{$error}}</li>
-                    </div>
-                @endforeach
-            @endif
+            @include('layout.error')
             <button type="submit" class="btn btn-default">提交</button>
         </form>
         <br>
