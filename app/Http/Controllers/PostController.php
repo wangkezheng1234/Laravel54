@@ -18,10 +18,14 @@ class PostController extends Controller
         return view("post/show",compact('post'));
     }
     function store(){
-        
+        $post = new Post();
+        $post->title = request('title');
+        $post->content = request('content');
+        $post->save();
+        return redirect('/posts');
     }
-    function edit(){
-        return view("post/edit");
+    function edit(Post $post){
+        return view("post/edit",compact('post'));
     }
     function update(){
         
